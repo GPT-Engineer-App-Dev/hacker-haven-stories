@@ -24,8 +24,8 @@ const Index = () => {
   ) || [];
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-4xl font-bold mb-8 text-center">Hacker News Top 100</h1>
+    <div className="min-h-screen bg-blue-50 p-8">
+      <h1 className="text-4xl font-bold mb-8 text-center text-blue-800">Hacker News Top 100</h1>
       
       <div className="mb-6 flex justify-center">
         <div className="relative w-full max-w-md">
@@ -56,15 +56,16 @@ const Index = () => {
       {!isLoading && !error && (
         <div className="space-y-4">
           {filteredStories.map((story) => (
-            <div key={story.objectID} className="bg-white p-4 rounded-lg shadow">
-              <h2 className="text-xl font-semibold mb-2">{story.title}</h2>
-              <p className="text-gray-600 mb-2">Upvotes: {story.points}</p>
+            <div key={story.objectID} className="bg-white p-4 rounded-lg shadow border-l-4 border-blue-500">
+              <h2 className="text-xl font-semibold mb-2 text-blue-700">{story.title}</h2>
+              <p className="text-blue-600 mb-2">Upvotes: {story.points}</p>
               <Button
                 as="a"
                 href={story.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="outline"
+                className="text-blue-600 hover:bg-blue-50"
               >
                 Read More
               </Button>
